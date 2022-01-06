@@ -1,4 +1,4 @@
-.downloader {
+.router {
     top: 0;
     left: 0;
     position: fixed;
@@ -19,7 +19,7 @@
     transform: translateY(0);
 }
 
-.downloader .schoolItem {
+.router .schoolItem {
     pointer-events: none;
     border: none;
 }
@@ -47,7 +47,7 @@
     background-color: rgb(184 184 184 / 22%);
 }
 
-.header_downloader {
+.headerrouter {
     display: flex;
     justify-content: space-between;
     padding-bottom: 8px;
@@ -100,7 +100,7 @@
     padding: 0 4px;
 }
 
-.footerDownloader {
+.footerrouter {
     margin-top: 24px;
     border-top: 1px solid rgba(182, 182, 182, 0.431);
     text-align: center;
@@ -118,4 +118,15 @@
 
 .noData img {
     width: 300px;
+}
+
+.metaData {
+    position: absolute;
+    top: -13px;
+    right: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 9px;
+    color: #fff;
+    background-color: #1F76BC;
 }

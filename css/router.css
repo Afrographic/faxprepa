@@ -1,0 +1,8 @@
+.routeItem:not(.route-active) {
+    display: none;
+}
+
+.backIcon {
+    width: 25px;
+    cursor: pointer;
+}

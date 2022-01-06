@@ -18,6 +18,56 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.button.loading {
+    padding: 20px 16px;
+    pointer-events: none;
+}
+
+.button.loading:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+    left: 175px;
+    animation: move2 1s ease 0.5s infinite;
+}
+
+.button.loading:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+    left: 138px;
+    animation: move 1s ease infinite;
+}
+
+@keyframes move {
+    0% {
+        left: 138px;
+        opacity: 0;
+    }
+    100% {
+        left: 175px;
+        opacity: 1;
+    }
+}
+
+@keyframes move2 {
+    0% {
+        left: 175px;
+        opacity: 0;
+    }
+    100% {
+        left: 138px;
+        opacity: 1;
+    }
 }
 
 .CTAButton {
@@ -70,4 +120,72 @@ input {
 
 .logoApp {
     width: 120px;
+}
+
+.form {
+    margin-bottom: 64px;
+}
+
+.formItem {
+    margin-bottom: 16px;
+}
+
+.formItem input,
+select {
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    padding: 8px 16px;
+    margin-top: 4px;
+    width: 100%;
+}
+
+.formContainer {
+    padding: 0px 128px;
+}
+
+.form input:focus {
+    box-shadow: 0px 8px 12px #e6e6e6;
+}
+
+.fileUpload {
+    border: 1px dashed #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.fileUpload img {
+    width: 15px;
+    margin-right: 16px;
+}
+
+.errorField {
+    background-color: #ed1c2421;
+    color: #ed1c24;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    /* inactive state */
+    opacity: 0;
+    max-height: 0;
+    padding: 0px;
+    margin: 0;
+}
+
+.error-active {
+    opacity: 1;
+    max-height: 200px;
+    padding: 8px 16px;
+    margin-top: 8px;
+}
+
+.errorField img {
+    width: 15px;
+    margin-right: 8px;
 }

@@ -5,13 +5,3 @@ function setActive(element) {
     });
     element.classList.add("active");
 }
-
-function closeDownloadScreen() {
-    let downloadView = $('.downloader');
-    downloadView.classList.remove('active');
-}
-
-function showDownloadScreen() {
-    let downloadView = $('.downloader');
-    downloadView.classList.add('active');
-}

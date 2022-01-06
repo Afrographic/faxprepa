@@ -62,3 +62,11 @@
     padding-bottom: 8px;
     overflow-y: scroll;
 }
+
+.affiliate {
+    padding: 0px 16px;
+}
+
+.affiliate p {
+    text-align: center;
+}
