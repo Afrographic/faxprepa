@@ -1,0 +1,46 @@
+.downloader {
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100vw;
+    width: 100vw;
+    background-color: white;
+    z-index: 1;
+    padding: 64px 400px;
+}
+
+.downloader .schoolItem {
+    pointer-events: none;
+    border: none;
+}
+
+.tabs {
+    margin-top: 16px;
+    border-bottom: 2px solid #55BBFF;
+    display: flex;
+}
+
+.tabItem {
+    padding: 8px 16px;
+    margin: 0px 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    cursor: pointer;
+}
+
+.tabItem.active {
+    background-color: #55BBFF;
+    color: white;
+}
+
+.tabItem:hover:not(.active) {
+    background-color: rgb(184 184 184 / 22%);
+}
+
+.header_downloader {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(170, 170, 170, 0.253);
+    margin-bottom: 16px;
+}
