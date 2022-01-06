@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/ecole.css">
     <link rel="stylesheet" href="css/download.css">
     <title>FaxPrepa</title>
+    <script src='lib.js'></script>
 </head>
 
 <body>
@@ -44,6 +45,8 @@
             CopyRight &copy; 2022 Afrographix Studio
         </div>
     </div>
+
+    <script src='scripts/download.js'></script>
 </body>
 
 </html>
