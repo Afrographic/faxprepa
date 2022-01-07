@@ -1,9 +1,11 @@
 //Getting the data
 let userData = {};
-if (localStorage.getItem('userData') != null) {
-    userData = localStorage.getItem('userData');
+if (localStorage.getItem('schoolData') != null) {
+    userData = localStorage.getItem('schoolData');
     userData = JSON.parse(userData);
     console.log(userData);
+
+    updateUiStateOnLogedIn();
 } else {
     // userData = {
     //     idShool: 1

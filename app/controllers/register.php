@@ -15,11 +15,13 @@ if (isset($_POST['name']) && isset($_POST['mdp']) && isset($_FILES['logo'])) {
         $destFolder = '../../images/logoEcole/' . $_FILES['logo']['name'];
         move_uploaded_file($tempLogoPath, $destFolder);
 
+        // Get the information of the connected user
+        $schoolData = login($name, $mdp);
         $res["status"] = 200;
-        $res["data"] = "Success!";
+        $res["schoolData"] = $schoolData;
     } else {
         $res["status"] = 404;
-        $res["data"] = "An error Occured!";
+        $res["schoolData"] = "An error Occured!";
     }
 
     echo json_encode($res);

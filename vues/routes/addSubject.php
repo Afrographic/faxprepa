@@ -1,11 +1,18 @@
 <div class="formContainer">
     <h1>Ajouter une epreuve</h1>
     <div class="form">
-        <input type="file" hidden id="subject">
-        <div class="fileUpload">
-            <img src="images/project/file.png" alt="">
-            <p>Ajouter un fichier</p>
+
+
+        <div class="formItem">
+            <input type="file" hidden id="subjectFile">
+            <div class="label">Fichier</div>
+            <div class="fileUpload" onclick="loadLogo()" id="fileUploadAddSubject">
+                <img src="images/project/file.png" alt="">
+                <p id="nameFile">Cliquez pour importer le sujet</p>
+            </div>
         </div>
+
+
         <div class="formItem">
             <div class="label">Nom de la matiere</div>
             <input class="input" placeholder="Entrez le nom de la matiere" />

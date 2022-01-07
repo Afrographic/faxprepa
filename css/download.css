@@ -95,7 +95,7 @@
 .testContainer {
     margin-top: 32px;
     height: 250px;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 40vh;
     padding: 0 4px;
 }

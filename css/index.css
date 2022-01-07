@@ -60,7 +60,7 @@
     background-color: #fff;
     padding: 0px 64px;
     padding-bottom: 8px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .affiliate {
@@ -69,4 +69,8 @@
 
 .affiliate p {
     text-align: center;
+}
+
+.button-invisible {
+    display: none;
 }

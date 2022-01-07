@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="css/download.css">
     <link rel="stylesheet" href="css/router.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/register.css">
     <title>FaxPrepa</title>
     <script src='lib.js'></script>
-    <script src='scripts/initUserAccount.js'></script>
+
 </head>
 
 <body>
@@ -30,8 +31,9 @@
                 </div>
             </div>
             <div class="actions">
-                <div class="button CTAButtonSecondary" onclick="showrouterScreen('login')">Se connecter</div>
-                <div class="button CTAButton" onclick="showrouterScreen('register')">S'enregistrer</div>
+                <div class="button CTAButtonSecondary button-invisible" onclick="showrouterScreen('addSubject')" id="publishSubjectUserLogedIn">Publier une epreuve</div>
+                <div class="button CTAButtonSecondary" onclick="showrouterScreen('login')" id="connectUser">Se connecter</div>
+                <div class="button CTAButton" onclick="showrouterScreen('register')" id="registerButtonFromIndex">S'enregistrer</div>
             </div>
         </div>
         <div class="mainContent">
@@ -56,6 +58,8 @@
     <script src='scripts/download.js'></script>
     <script src='scripts/router.js'></script>
     <script src='scripts/login.js'></script>
+    <script src='scripts/register.js'></script>
+    <script src='scripts/initUserAccount.js'></script>
 </body>
 
 </html>

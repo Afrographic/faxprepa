@@ -106,7 +106,7 @@ input {
 
 .mainContent {
     flex: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
     display: flex;
     width: 100vw;
 }
@@ -123,11 +123,15 @@ input {
 }
 
 .form {
-    margin-bottom: 64px;
+    margin-bottom: 32px;
 }
 
 .formItem {
     margin-bottom: 16px;
+}
+
+.formItem .label {
+    margin-bottom: 4px;
 }
 
 .formItem input,
@@ -135,12 +139,13 @@ select {
     border-radius: 8px;
     border: 1px solid #aaa;
     padding: 8px 16px;
-    margin-top: 4px;
     width: 100%;
 }
 
 .formContainer {
     padding: 0px 128px;
+    height: 70vh;
+    overflow-y: auto;
 }
 
 .form input:focus {
@@ -154,8 +159,14 @@ select {
     justify-content: center;
     color: #aaa;
     border-radius: 8px;
-    margin-bottom: 16px;
+    padding: 8px 0px;
     cursor: pointer;
+    font-size: 10px;
+}
+
+.fileUpload.loaded {
+    border: 1px dashed #1F76BC;
+    color: #1F76BC;
 }
 
 .fileUpload img {
@@ -178,14 +189,35 @@ select {
     margin: 0;
 }
 
-.error-active {
+.info {
+    background-color: #00a6ff2e;
+    color: #00A5FF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    /* inactive state */
+    opacity: 0;
+    max-height: 0;
+    padding: 0px;
+    margin: 0;
+}
+
+.error-active,
+.info-active {
     opacity: 1;
     max-height: 200px;
     padding: 8px 16px;
-    margin-top: 8px;
+    margin: 8px 0px;
 }
 
-.errorField img {
+.errorField img,
+.info img {
     width: 15px;
     margin-right: 8px;
+}
+
+.routeItem h1 {
+    text-align: center;
 }

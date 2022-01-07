@@ -9,11 +9,16 @@ function loginProxy(loginButton) {
     if (fieldsClean) {
         loginButton.innerHTML = '';
         loginButton.classList.add("loading");
-        login(loginButton, name, mdp)
+
+        loginSchool(loginButton, name, mdp)
+    } else {
+        // console.log("fuck!");
     }
 }
 
-function login(loginButton, name, mdp) {
+function loginSchool(loginButton, name, mdp) {
+    console.log("Make the request");
+    console.log("fuck!");
     let data = new FormData();
     data.append('name', name)
     data.append('mdp', mdp)
@@ -25,16 +30,31 @@ function login(loginButton, name, mdp) {
             loginButton.classList.remove("loading");
             loginButton.innerHTML = 'Se connecter';
             handleLoginResponse(res);
+
+            console.log(res);
         }, 1000);
     }
     req.send(data);
 }
 
 function handleLoginResponse(res) {
-    if (!res) {
+    if (res.status == 404) {
         $("#login-error").classList.add("error-active");
-        return false;
+
+    } else {
+        $("#successLogin").classList.add("info-active");
+        let schoolData = JSON.stringify(res.schoolData);
+        localStorage.setItem('schoolData', schoolData);
+        closeLoginScreen();
     }
+}
+
+function closeLoginScreen() {
+    scrollToBottomOfHtmlElement($('#registerForm'));
+    setTimeout(function() {
+        closerouterScreen();
+        updateUiStateOnLogedIn();
+    }, 1000);
 }
 
 function toggleErrorField(inputField, parentNode) {
@@ -45,4 +65,10 @@ function toggleErrorField(inputField, parentNode) {
         $(`#${parentNode} .errorField`).classList.remove("error-active");
         return true;
     }
+}
+
+function updateUiStateOnLogedIn() {
+    $("#publishSubjectUserLogedIn").classList.remove("button-invisible");
+    $("#connectUser").classList.add("button-invisible")
+    $("#registerButtonFromIndex").classList.add("button-invisible")
 }
