@@ -4,13 +4,14 @@ function getSchool($offset)
 {
     global $con;
     $schools = [];
-    $query = "select * from school ORDER BY idSchool DESC LIMIT 30 OFFSET $offset";
+    $query = "select school.*,(select count(*) as totalEpreuve from epreuve where school.idSchool = epreuve.idEcole) as  totalEpreuve from school ORDER BY idSchool DESC LIMIT 30 OFFSET $offset";
     $res =  mysqli_query($con, $query);
 
     while ($row = mysqli_fetch_assoc($res)) {
         $schoolItem["idSchool"] = $row["idSchool"];
         $schoolItem["name"] = $row["name"];
         $schoolItem["logo"] = $row["logo"];
+        $schoolItem["totalEpreuve"] = $row["totalEpreuve"];
         $schools[] = $schoolItem;
     }
     return $schools;

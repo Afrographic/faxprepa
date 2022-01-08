@@ -21,7 +21,7 @@
     </div>
     <div class="errorField" id='login-error'>
         <img src="images/project/warning.png" alt="">
-        <span>Cet utilisateur n'existe pas!</span>
+        <span>Cet ecole n'existe pas!</span>
     </div><br>
     <div class="info" id="successLogin">
         <img src="images/project/info.png" alt="">

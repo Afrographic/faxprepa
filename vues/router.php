@@ -19,6 +19,9 @@
     <div class="routeItem" id="addSubject">
         <?php require("routes/addSubject.php") ?>
     </div>
+    <div class="routeItem" id="gererTest">
+        <?php require("routes/gereTest.php") ?>
+    </div>
     <div class="footerrouter">
         2022 Afographix Studio
     </div>

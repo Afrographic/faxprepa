@@ -39,6 +39,7 @@
 .section {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     flex: 1;
 }
@@ -71,6 +72,15 @@
     text-align: center;
 }
 
-.button-invisible {
+.invisible {
     display: none;
+}
+
+.logoSchoolLogedIn img {
+    width: 25px;
+}
+
+.logoSchoolLogedIn {
+    display: flex;
+    align-items: center;
 }

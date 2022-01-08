@@ -3,8 +3,8 @@ include_once dirname(__FILE__) . '/../services/schoolEngine.php';
 
 if (isset($_POST['name']) && isset($_POST['mdp']) && isset($_FILES['logo'])) {
     // Serialising the name
-    $name = mysqli_real_escape_string($con, $_POST['name']);
-    $mdp = mysqli_real_escape_string($con, $_POST['mdp']);
+    $name = $_POST['name'];
+    $mdp = $_POST['mdp'];
 
     // Saving the school to the database
     $dbImagePath = 'images/logoEcole/' . $_FILES['logo']['name'];

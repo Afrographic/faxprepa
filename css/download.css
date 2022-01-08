@@ -6,7 +6,7 @@
     width: 100vw;
     background-color: white;
     z-index: 1;
-    padding: 64px 400px;
+    padding: 64px 30vw;
     /* inactive state */
     opacity: 0;
     pointer-events: none;
@@ -38,12 +38,12 @@
     cursor: pointer;
 }
 
-.tabItem.active {
+.tabItem.tab-active {
     background-color: #55BBFF;
     color: white;
 }
 
-.tabItem:hover:not(.active) {
+.tabItem:hover:not(.tab-active) {
     background-color: rgb(184 184 184 / 22%);
 }
 
@@ -129,4 +129,9 @@
     font-size: 9px;
     color: #fff;
     background-color: #1F76BC;
+}
+
+#activeSchoolName {
+    font-weight: bold;
+    font-size: 18px;
 }

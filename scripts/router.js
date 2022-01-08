@@ -1,6 +1,8 @@
 function closerouterScreen() {
     let router = $('.router');
     router.classList.remove('active');
+    resetDownloadState();
+    loadSchool(0);
 }
 
 function showrouterScreen(routeName) {

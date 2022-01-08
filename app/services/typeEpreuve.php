@@ -1,8 +1,9 @@
 <?php
 include_once dirname(__FILE__) . '/../db.php';
 
-function getTypeEpreuve($con)
+function getTypeEpreuve()
 {
+    global $con;
     $typeEpreuve = [];
     $query = "select * from typeepreuve";
     $res =  mysqli_query($con, $query);
@@ -13,5 +14,3 @@ function getTypeEpreuve($con)
     }
     return $typeEpreuve;
 }
-
-getTypeEpreuve($con);

@@ -30,32 +30,7 @@ function registerProxy(registerButton) {
     }
 }
 
-function enableButtonLoadingState(button) {
-    button.innerHTML = '';
-    button.classList.add("loading");
 
-}
-
-function scrollToBottomOfHtmlElement(element) {
-    element.scrollTop = element.scrollHeight;
-}
-
-function endButtonLoadingState(button, initialText) {
-    button.innerHTML = initialText;
-    button.classList.remove("loading");
-}
-
-function renderError(HTMlNode, message) {
-    console.log(HTMlNode);
-    if (!HTMlNode.innerHTML.includes("error-active")) {
-        HTMlNode.innerHTML += `
-        <div class="errorField error-active">
-            <img src="images/project/warning.png" alt="">
-            <span>${message}</span>
-        </div>
-        `;
-    }
-}
 
 function register(name, logo, mdp) {
     let data = new FormData();
@@ -80,6 +55,7 @@ function login(res) {
         let schoolData = JSON.stringify(res.schoolData);
         localStorage.setItem('schoolData', schoolData);
         closeRegisterScreen();
+
     } else {
         $("#errorCreateAccount").classList.add("error-active");
     }

@@ -17,14 +17,13 @@ function loginProxy(loginButton) {
 }
 
 function loginSchool(loginButton, name, mdp) {
-    console.log("Make the request");
-    console.log("fuck!");
     let data = new FormData();
     data.append('name', name)
     data.append('mdp', mdp)
     let req = new XMLHttpRequest();
     req.open("POST", "app/controllers/login.php");
     req.onload = function() {
+        console.log(this.responseText);
         let res = JSON.parse(this.responseText);
         setTimeout(function() {
             loginButton.classList.remove("loading");
@@ -43,6 +42,7 @@ function handleLoginResponse(res) {
 
     } else {
         $("#successLogin").classList.add("info-active");
+        userData = res.schoolData;
         let schoolData = JSON.stringify(res.schoolData);
         localStorage.setItem('schoolData', schoolData);
         closeLoginScreen();
@@ -68,7 +68,20 @@ function toggleErrorField(inputField, parentNode) {
 }
 
 function updateUiStateOnLogedIn() {
-    $("#publishSubjectUserLogedIn").classList.remove("button-invisible");
-    $("#connectUser").classList.add("button-invisible")
-    $("#registerButtonFromIndex").classList.add("button-invisible")
+    $("#pathShoolSignedIn").src = userData.logo;
+    hide($("#affiliate"));
+    hide($("#connectUser"));
+    hide($("#registerButtonFromIndex"));
+    makeVisible($("#publishSubjectUserLogedIn"))
+    makeVisible($("#logOut"))
+    makeVisible($("#admin"))
+    makeVisible($("#pathShoolSignedIn"))
+}
+
+function makeVisible(htmlElement) {
+    htmlElement.classList.remove("invisible");
+}
+
+function hide(htmlElement) {
+    htmlElement.classList.add("invisible");
 }
