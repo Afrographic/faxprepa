@@ -1,0 +1,34 @@
+@media (max-width:1000px) {
+    /* body {
+        display: none;
+    } */
+    .mainContent {
+        flex-direction: column;
+    }
+    .application,
+    .section {
+        flex: auto;
+    }
+    .button {
+        font-size: 10px;
+    }
+    .schoolContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .router {
+        height: 800px;
+        padding: 8px;
+    }
+    .container {
+        height: auto;
+    }
+    .header {
+        padding: 16px;
+    }
+    .headerrouter {
+        padding: 8px 36px;
+    }
+    .formContainer {
+        padding: 0px 16px;
+    }
+}

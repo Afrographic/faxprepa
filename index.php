@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="css/gererTest.css">
+    <link rel="stylesheet" href="css/mediaQuery.css">
     <title>FaxPrepa</title>
     <script src='lib.js'></script>
 
@@ -48,7 +49,7 @@
                 <img src="images/project/learning_illustration.svg" alt="">
                 <h3>Retrouvez les anciens sujets de votre ecole pour booster vos preparations</h3>
                 <div class="affiliate" id='affiliate'>
-                    <p>Nous rejoindre , creer un compte et commencer a publier des epreuves</p>
+                    <p>Nous rejoindre , creer un compte <br> et commencer a publier des epreuves</p>
                     <div class="button CTAButtonSecondary" onclick="showrouterScreen('register')">Creer un compte</div>
                 </div>
                 <div class="affiliate invisible" id='admin'>
