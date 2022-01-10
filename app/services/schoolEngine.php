@@ -37,6 +37,7 @@ function createSchool($name, $mdp, $logo)
     }
 
     // inserting the data
+    $mdp = md5($mdp);
     $query = "insert into school(name,logo,mdp) values('$name','$logo','$mdp')";
     mysqli_query($con, $query);
     return true;
@@ -45,6 +46,7 @@ function createSchool($name, $mdp, $logo)
 function login($name, $mdp)
 {
     global $con;
+    $mdp = md5($mdp);
     $query = "select * from school where name='$name' AND mdp='$mdp'";
     $res =  mysqli_query($con, $query);
 
