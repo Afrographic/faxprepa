@@ -51,9 +51,7 @@ function addSubject(subjectObj) {
             closeAddSubjectScreen();
             endButtonLoadingState($('#addSubjectButton'), "Ajouter l'epreuve");
         }, 1000);
-        setTimeout(function() {
-            reload();
-        }, 1000);
+        reloadUi()
     }
     req.send(data);
 }

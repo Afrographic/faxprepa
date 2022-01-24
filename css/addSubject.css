@@ -1,0 +1,7 @@
+.filiere_niveau {
+    display: flex;
+}
+
+.filiere_niveau .formItem {
+    flex: 1;
+}

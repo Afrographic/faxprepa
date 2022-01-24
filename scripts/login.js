@@ -41,14 +41,16 @@ function handleLoginResponse(res) {
     } else {
         $("#successLogin").classList.add("info-active");
         userData = res.schoolData;
+        console.log(userData);
+        greetUser(userData.pseudo);
         let schoolData = JSON.stringify(res.schoolData);
         localStorage.setItem('schoolData', schoolData);
         closeLoginScreen();
-        setTimeout(function() {
-            reload();
-        }, 1000);
+        reloadUi()
     }
 }
+
+
 
 function closeLoginScreen() {
     scrollToBottomOfHtmlElement($('#registerForm'));

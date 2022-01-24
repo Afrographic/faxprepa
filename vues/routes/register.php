@@ -33,7 +33,7 @@
 
     <div class="errorField" id="errorCreateAccount">
         <img src="images/project/warning.png" alt="">
-        <span>Ce compte existe deja, veuillez vous connecter!</span>
+        <span>Ce compte existe deja, veuillez vous connecter! ou bien changer de pseudo</span>
     </div>
     <div class="info" id="successCreateAccount">
         <img src="images/project/info.png" alt="">

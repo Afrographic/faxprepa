@@ -1,10 +1,14 @@
 <div class="schoolItem">
     <div class="logo">
         <img src="images/logoEcole/fasa.jpg" alt="" id="activeSchoolLogo" />
-    </div>
-    <div>
         <div class="nom" id="activeSchoolName">FASA - Faculte d'agronomie</div>
+    </div>
+    <div class="downloadSchoolItem">
         <div class="numEpreuve" id="activeSchoolNumTest">14 epreuves</div>
+        <div class="manager">
+            <img src="images/project/admin.svg" alt="">
+            <div> Gerer par ${schoolItem.pseudo} </div>
+        </div>
     </div>
 </div>
 <div class="tabs" id='typeTestTabs'>

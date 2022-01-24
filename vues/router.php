@@ -22,6 +22,9 @@
     <div class="routeItem" id="gererTest">
         <?php require("routes/gereTest.php") ?>
     </div>
+    <div class="routeItem" id="ajouterFiliere">
+        <?php require("routes/addFiliere.php") ?>
+    </div>
     <div class="footerrouter">
         2022 Afographix Studio
     </div>

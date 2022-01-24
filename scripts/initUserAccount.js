@@ -3,7 +3,8 @@ let userData = {};
 if (JSON.parse(localStorage.getItem('schoolData')) != null) {
     userData = localStorage.getItem('schoolData');
     userData = JSON.parse(userData);
-    console.log(userData);
+
+    greetUser(userData.pseudo);
 
     updateUiStateOnLogedIn();
 } else {

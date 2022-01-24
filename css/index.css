@@ -108,3 +108,20 @@
     opacity: 0.7 !important;
     pointer-events: auto !important;
 }
+
+.connectedUser {
+    color: #297cbe;
+    padding: 8px 25px;
+    font-size: 12px;
+    border: 1px solid #297cbe;
+    border-radius: 8px;
+}
+
+.connectedUser_in_active {
+    display: none;
+}
+
+.logoSchoolLogedIn img {
+    clip-path: circle();
+    width: 50px;
+}

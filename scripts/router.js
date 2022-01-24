@@ -6,9 +6,6 @@ function closerouterScreen() {
 }
 
 function showrouterScreen(routeName) {
-
-
-
     let router = $('.router');
     router.classList.add('active');
     let routes = $$('.routeItem');

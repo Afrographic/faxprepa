@@ -4,10 +4,10 @@
 }
 
 .schoolItem {
-    border: 1px solid #aaa;
+    border: 1px solid #aaaaaa47;
     border-radius: 8px;
     padding: 16px;
-    display: flex;
+    /* display: flex; */
     cursor: pointer;
     top: 0px
 }
@@ -20,6 +20,7 @@
 .schoolItem img {
     width: 50px;
     margin-right: 8px;
+    clip-path: circle();
 }
 
 .schoolItem .nom {
@@ -50,4 +51,30 @@
 
 .searchBar input {
     flex: 1;
+}
+
+.manager img {
+    width: 13px;
+}
+
+.schoolItem .logo {
+    display: flex;
+    align-items: center;
+}
+
+.schoolItem .manager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2077BC;
+    background-color: #2076bc13;
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 8px;
+    font-size: 11px;
+}
+
+.disposeForMenu {
+    opacity: 0;
+    pointer-events: none;
 }

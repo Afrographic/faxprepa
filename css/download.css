@@ -139,3 +139,18 @@
     font-weight: bold;
     font-size: 18px;
 }
+
+.downloadSchoolItem {
+    display: flex;
+    margin-top: 8px;
+}
+
+.downloadSchoolItem .manager,
+.downloadSchoolItem .numEpreuve {
+    flex: 1;
+    margin-top: 0px !important;
+}
+
+.downloadSchoolItem .manager {
+    margin-left: 8px;
+}

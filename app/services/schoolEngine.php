@@ -18,6 +18,24 @@ function getSchool($offset)
     return $schools;
 }
 
+function searchSchool($token)
+{
+    global $con;
+    $schools = [];
+    $query = "select school.*,(select count(*) as totalEpreuve from epreuve where school.idSchool = epreuve.idEcole) as  totalEpreuve from school where name like '%$token%' ORDER BY idSchool DESC ";
+    $res =  mysqli_query($con, $query);
+
+    while ($row = mysqli_fetch_assoc($res)) {
+        $schoolItem["idSchool"] = $row["idSchool"];
+        $schoolItem["name"] = $row["name"];
+        $schoolItem["logo"] = $row["logo"];
+        $schoolItem["totalEpreuve"] = $row["totalEpreuve"];
+        $schoolItem["pseudo"] = $row["pseudo"];
+        $schools[] = $schoolItem;
+    }
+    return $schools;
+}
+
 function createSchool($name, $mdp, $logo, $pseudo)
 {
     global $con;
@@ -30,7 +48,7 @@ function createSchool($name, $mdp, $logo, $pseudo)
         return false;
     }
     // check if the school already exist or not
-    $query = "select * from school where name='$name' or pseudo = '$pseudo'";
+    $query = "select * from school where   pseudo = '$pseudo'";
     $res =  mysqli_query($con, $query);
     if (mysqli_num_rows($res) > 0) {
         return  false;
@@ -55,6 +73,7 @@ function login($name, $mdp)
             $schoolItem["idSchool"] = $row["idSchool"];
             $schoolItem["name"] = $row["name"];
             $schoolItem["logo"] = $row["logo"];
+            $schoolItem["pseudo"] = $row["pseudo"];
         }
         return $schoolItem;
     } else {

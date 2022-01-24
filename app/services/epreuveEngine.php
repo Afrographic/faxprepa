@@ -14,6 +14,8 @@ function getEpreuve($idSchool)
         $testItem["idEcole"] = $row["idEcole"];
         $testItem["idTypeEpreuve"] = $row["idTypeEpreuve"];
         $testItem["totalDownload"] = $row["totalDownload"];
+        $testItem["niveau"] = $row["niveau"];
+        $testItem["filiere"] = $row["filiere"];
         $tests[] = $testItem;
     }
     return $tests;

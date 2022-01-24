@@ -68,9 +68,7 @@ function login(res) {
         localStorage.setItem('schoolData', schoolData);
         closeRegisterScreen();
 
-        setTimeout(function() {
-            reload();
-        }, 1000);
+        reloadUi()
 
 
 
