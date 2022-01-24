@@ -17,33 +17,48 @@
     <link rel="stylesheet" href="css/mediaQuery.css">
     <title>FaxPrepa</title>
     <script src='lib.js'></script>
+    <script src='scripts/index.js'></script>
 
 
 </head>
 
 <body>
+    <div class="overflow" onclick="hideMenuMobile()"></div>
     <div class="container">
         <div class="header">
             <div class="logo">
                 <img src="images/project/faxPrepa.png" alt="" class="logoApp">
             </div>
-            <!-- <div class="searchBar">
-                <input type="text" placeholder="Entrez le nom de votre ecole">
-                <div class="searchIcon">
-                    <img src="images/project/search.png" alt="">
-                </div>
-            </div> -->
-            <div class="actions">
+
+            <div class="actions" id="menuPhone" onclick="hideMenuMobile()">
                 <div class="logoSchoolLogedIn invisible">
                     <img src="" alt="" id="pathShoolSignedIn">
                 </div>
+                <!-- <div class="searchBar phone">
+                    <input type="text" placeholder="Entrez le nom de votre ecole">
+                    <div class="searchIcon">
+                        <img src="images/project/search.png" alt="">
+                    </div>
+                </div> -->
                 <div class="button CTAButtonSecondary invisible" onclick="logOut()" id="logOut">Deconnexion</div>
                 <div class="button CTAButton invisible" onclick="showrouterScreen('addSubject')" id="publishSubjectUserLogedIn">Publier une epreuve</div>
                 <div class="button CTAButtonSecondary" onclick="showrouterScreen('login')" id="connectUser">Se connecter</div>
 
                 <div class="button CTAButton" onclick="showrouterScreen('register')" id="registerButtonFromIndex">S'enregistrer</div>
+
+
+                <div class="logo phone">
+                    <img src="images/project/faxPrepa.png" alt="" class="logoApp">
+                </div>
+
+                <div class="footer phone">
+                    CopyRight &copy; 2022 Afrographix Studio
+                </div>
             </div>
+            <img src="images/project/menu.svg" alt="" class='menuToggle' onclick="activateMenuMobile()">
         </div>
+
+
         <div class="mainContent">
             <div class="section">
                 <img src="images/project/learning_illustration.svg" alt="">
@@ -74,7 +89,7 @@
     <script src='scripts/addSubject.js'></script>
     <script src='scripts/ecole.js'></script>
     <script src='scripts/test.js'></script>
-    <script src='scripts/index.js'></script>
+
     <script src='scripts/gererTest.js'></script>
     <script src='scripts/initUserAccount.js'></script>
 </body>

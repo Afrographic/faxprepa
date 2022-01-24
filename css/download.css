@@ -2,10 +2,12 @@
     top: 0;
     left: 0;
     position: fixed;
-    height: 100vw;
+    height: 100vh;
     width: 100vw;
     background-color: white;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
     padding: 16px 30vw;
     /* inactive state */
     opacity: 0;
@@ -94,10 +96,12 @@
 
 .testContainer {
     margin-top: 32px;
-    height: 250px;
     overflow-y: auto;
-    height: 40vh;
     padding: 0 4px;
+}
+
+.routeItem.route-active {
+    flex: 1;
 }
 
 .footerrouter {

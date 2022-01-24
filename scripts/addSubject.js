@@ -11,6 +11,8 @@ function addSubjectProxy(addSubjectButton) {
         subjectObj.taille = bytesToSize(subjectObj.file.size);
     }
 
+    let isPDF = subjectObj.file.name.includes("pdf");
+
     // verification of the fields
     if (subjectObj.name.trim().length == 0) {
         renderError($('#nomMatiere').parentNode, "Veuillez renseigner le nom de la matiere");
@@ -25,11 +27,13 @@ function addSubjectProxy(addSubjectButton) {
         renderError($('#subjectFile').parentNode, "Veuillez importer le document correspondant a l'epreuve!");
         fieldOK = false;
     }
-    if (fieldOK) {
+    if (!isPDF) {
+        renderError($('#subjectFile').parentNode, "Veuillez importer un fichier PDF!");
+        fieldOK = false;
+    }
+    if (fieldOK && isPDF) {
         enableButtonLoadingState(addSubjectButton);
         addSubject(subjectObj);
-    } else {
-        console.log("Fuck");
     }
 }
 
@@ -46,6 +50,9 @@ function addSubject(subjectObj) {
         setTimeout(function() {
             closeAddSubjectScreen();
             endButtonLoadingState($('#addSubjectButton'), "Ajouter l'epreuve");
+        }, 1000);
+        setTimeout(function() {
+            reload();
         }, 1000);
     }
     req.send(data);

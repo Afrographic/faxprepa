@@ -2,8 +2,8 @@
     <h1>Login</h1>
     <div class="form">
         <div class="formItem" id='name'>
-            <div class="label">Nom ecole</div>
-            <input type="text" placeholder="Entrez le nom de votre ecole" id='nameLogin' />
+            <div class="label">Pseudo ecole</div>
+            <input type="text" placeholder="Entrez le pseudo de votre ecole" id='nameLogin' />
             <div class="errorField">
                 <img src="images/project/warning.png" alt="">
                 <span>Erreur sur ce champ</span>

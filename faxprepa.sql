@@ -27,6 +27,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `epreuve`
 --
 
+CREATE DATABASE faxprepa
+
 CREATE TABLE `epreuve` (
   `idEpreuve` int(11) NOT NULL,
   `nom` varchar(255) DEFAULT NULL,

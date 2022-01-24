@@ -1,4 +1,10 @@
 <h3>Les ecoles</h3>
+<div class="searchBar">
+    <input type="text" placeholder="Entrez le nom de votre ecole">
+    <div class="searchIcon">
+        <img src="images/project/search.png" alt="">
+    </div>
+</div>
 <div class="schoolContainer" id="schoolContainer">
     <div class="schoolItem" onclick="showrouterScreen('downloader')">
         <div class="logo">
@@ -9,5 +15,6 @@
             <div class="numEpreuve">14 epreuves</div>
         </div>
     </div>
+
     <!-- Ces donnees seront modifier dynamiquement -->
 </div>

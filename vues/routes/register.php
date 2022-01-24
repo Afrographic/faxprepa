@@ -17,6 +17,10 @@
             <input type="input" placeholder="Entrez le nom de votre ecole" id="nameRegister" />
         </div>
         <div class="formItem">
+            <div class="label">Pseudo ecole</div>
+            <input type="input" placeholder="Entrez le pseudo de votre ecole" id="pseudoRegister" />
+        </div>
+        <div class="formItem">
             <div class="label">Mot de passe</div>
             <input type="password" placeholder="Entrez le mot de passe" id="mdpRegister" />
         </div>

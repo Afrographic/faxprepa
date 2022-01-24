@@ -23,7 +23,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
 .button.loading {
@@ -97,7 +96,6 @@ a {
     background-color: white;
     border: 2px solid #1F76BC;
     color: #1F76BC;
-    padding: 8px 16px;
 }
 
 input {
@@ -118,6 +116,7 @@ input {
     overflow-y: auto;
     display: flex;
     width: 100vw;
+    margin-top: 80px;
 }
 
 .footer {

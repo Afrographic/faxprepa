@@ -16,7 +16,6 @@
         grid-template-columns: repeat(1, 1fr);
     }
     .router {
-        height: 800px;
         padding: 8px;
     }
     .container {
@@ -30,5 +29,83 @@
     }
     .formContainer {
         padding: 0px 16px;
+    }
+    .menuToggle {
+        display: block !important;
+    }
+    .actions {
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: -80vw;
+        flex-direction: column;
+        /* align-items: center; */
+        grid-gap: 16px;
+        /* justify-content: center; */
+        height: 100vh;
+        width: 80vw;
+        padding: 16px;
+        z-index: 3;
+    }
+    .overflow {
+        display: block !important;
+        opacity: 0.7;
+        background-color: #053964;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        /* inactive state */
+        opacity: 0;
+        pointer-events: none;
+    }
+    .searchBar.desktop {
+        display: none !important;
+    }
+    .searchBar.phone {
+        display: flex !important;
+    }
+    .searchBar.phone input {
+        flex: 1;
+    }
+    .logoSchoolLogedIn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .logo.phone {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        margin-top: 64px;
+        opacity: 0.4;
+    }
+    .footer.phone {
+        display: block;
+        border-top: 1px solid rgba(170, 170, 170, 0.171);
+    }
+    .searchBar.phone {
+        margin: 0 8px;
+        padding: 16px
+    }
+    .application {
+        padding: 0px !important;
+        background-color: transparent !important;
+    }
+    .application h3 {
+        text-align: center;
+    }
+    #testContainer>div>div:nth-child(3) {
+        text-align: left;
+        padding-left: 10px;
+    }
+    .testItem .flex1 {
+        text-align: center;
+    }
+    .testItem {
+        display: grid;
+        grid-gap: 8px;
+        grid-template-columns: repeat(2, 1fr);
     }
 }

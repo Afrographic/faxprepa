@@ -11,8 +11,6 @@ function loginProxy(loginButton) {
         loginButton.classList.add("loading");
 
         loginSchool(loginButton, name, mdp)
-    } else {
-        // console.log("fuck!");
     }
 }
 
@@ -46,6 +44,9 @@ function handleLoginResponse(res) {
         let schoolData = JSON.stringify(res.schoolData);
         localStorage.setItem('schoolData', schoolData);
         closeLoginScreen();
+        setTimeout(function() {
+            reload();
+        }, 1000);
     }
 }
 

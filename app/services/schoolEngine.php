@@ -12,17 +12,17 @@ function getSchool($offset)
         $schoolItem["name"] = $row["name"];
         $schoolItem["logo"] = $row["logo"];
         $schoolItem["totalEpreuve"] = $row["totalEpreuve"];
+        $schoolItem["pseudo"] = $row["pseudo"];
         $schools[] = $schoolItem;
     }
     return $schools;
 }
 
-function createSchool($name, $mdp, $logo)
+function createSchool($name, $mdp, $logo, $pseudo)
 {
     global $con;
     // Serializing the data
     $name = ucfirst($name);
-    $mdp = ucfirst($mdp);
     $logo = ucfirst($logo);
 
     // check if all the input are corrects
@@ -30,7 +30,7 @@ function createSchool($name, $mdp, $logo)
         return false;
     }
     // check if the school already exist or not
-    $query = "select * from school where name='$name'";
+    $query = "select * from school where name='$name' or pseudo = '$pseudo'";
     $res =  mysqli_query($con, $query);
     if (mysqli_num_rows($res) > 0) {
         return  false;
@@ -38,7 +38,7 @@ function createSchool($name, $mdp, $logo)
 
     // inserting the data
     $mdp = md5($mdp);
-    $query = "insert into school(name,logo,mdp) values('$name','$logo','$mdp')";
+    $query = "insert into school(name,logo,mdp,pseudo) values('$name','$logo','$mdp','$pseudo')";
     mysqli_query($con, $query);
     return true;
 }
@@ -47,7 +47,7 @@ function login($name, $mdp)
 {
     global $con;
     $mdp = md5($mdp);
-    $query = "select * from school where name='$name' AND mdp='$mdp'";
+    $query = "select * from school where pseudo='$name' AND mdp='$mdp'";
     $res =  mysqli_query($con, $query);
 
     if (mysqli_num_rows($res) > 0) {

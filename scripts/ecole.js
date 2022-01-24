@@ -5,6 +5,8 @@ function loadSchool(offset) {
 
         var schools = JSON.parse(this.responseText);
         renderSchools(schools, offset);
+
+        console.log(schools);
     }
     req.send();
 }
@@ -22,6 +24,7 @@ function renderSchools(schools, offset) {
             <div>
                 <div class="nom">${schoolItem.name}</div>
                 <div class="numEpreuve">${schoolItem.totalEpreuve}   epreuve(s)</div>
+                <div class="manager">Gerer par ${schoolItem.pseudo}  </div>
             </div>
         </div>
         `
@@ -38,4 +41,8 @@ function renderSchools(schools, offset) {
             <img src="images/project/noData.png" alt="">
         </div>`;
     }
+}
+
+function search() {
+
 }

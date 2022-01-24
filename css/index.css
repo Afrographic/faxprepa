@@ -7,6 +7,7 @@
     border-bottom: 1px solid #d8d8d8;
     background-color: #fff;
     width: 100vw;
+    position: fixed;
 }
 
 .searchBar {
@@ -21,8 +22,17 @@
     box-shadow: 0px 0px 12px #81818159;
 }
 
+.logo.phone {
+    display: none;
+}
+
 .actions {
     display: flex;
+}
+
+.searchBar.phone,
+.footer.phone {
+    display: none;
 }
 
 .searchIcon {
@@ -83,4 +93,18 @@
 .logoSchoolLogedIn {
     display: flex;
     align-items: center;
+}
+
+.menuToggle {
+    width: 25px;
+    display: none;
+}
+
+.actions_active {
+    left: 0 !important;
+}
+
+.overflow_active {
+    opacity: 0.7 !important;
+    pointer-events: auto !important;
 }

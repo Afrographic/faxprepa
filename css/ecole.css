@@ -9,7 +9,6 @@
     padding: 16px;
     display: flex;
     cursor: pointer;
-    position: relative;
     top: 0px
 }
 
@@ -41,4 +40,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
+}
+
+.searchBar {
+    display: flex;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.searchBar input {
+    flex: 1;
 }
