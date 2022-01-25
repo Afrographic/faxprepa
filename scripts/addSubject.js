@@ -4,14 +4,18 @@ function addSubjectProxy(addSubjectButton) {
     subjectObj.file = $('#subjectFile').files[0];
     subjectObj.name = $('#nomMatiere').value;
     subjectObj.annee = $('#anneMatiere').value;
+    subjectObj.niveau = $('#niveau').value;
     subjectObj.taille = 0;
     subjectObj.idEcole = parseInt(userData.idSchool);
     subjectObj.idTypeEpreuve = parseInt($('#typeExam').value);
+    subjectObj.idFiliere = parseInt($('#filieres').value);
     if (subjectObj.file != null) {
         subjectObj.taille = bytesToSize(subjectObj.file.size);
     }
-
-    let isPDF = subjectObj.file.name.includes("pdf");
+    let isPDF = true;
+    if (subjectObj.file != undefined) {
+        isPDF = subjectObj.file.name.includes("pdf");
+    }
 
     // verification of the fields
     if (subjectObj.name.trim().length == 0) {
@@ -20,6 +24,10 @@ function addSubjectProxy(addSubjectButton) {
     }
     if (subjectObj.annee.trim().length == 0) {
         renderError($('#anneMatiere').parentNode, "Veuillez renseigner l'anne scolaire de l'epreuve");
+        fieldOK = false;
+    }
+    if (subjectObj.niveau.trim().length == 0) {
+        renderError($('#niveau').parentNode, "Veuillez renseigner Le niveau");
         fieldOK = false;
     }
 
@@ -107,3 +115,4 @@ function resetAddSubjectField() {
     $('#nomMatiere').value = '';
     $('#anneMatiere').value = '';
 }
+$('#anneMatiere').value = '';

@@ -1,7 +1,7 @@
 <h3>Les ecoles</h3>
 <div class="searchBar">
     <input type="text" placeholder="Entrez le nom de votre ecole" id="searchToken">
-    <div class="searchIcon" onclick="closeSearch()">
+    <div class="searchIcon" onclick="closeSearch()" id="searchSchool">
         <img src="images/project/search.png" alt="">
     </div>
 </div>

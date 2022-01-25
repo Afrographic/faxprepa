@@ -6,8 +6,11 @@ function setActive(element) {
     element.classList.add("tab-active");
 }
 
+
+
+
 function resetDownloadState() {
-    console.log("Guck");
+
     let tabs = $$('.tabItem');
     tabs.forEach(function(item) {
         item.classList.remove("tab-active");

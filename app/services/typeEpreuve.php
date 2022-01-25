@@ -8,9 +8,7 @@ function getTypeEpreuve()
     $query = "select * from typeepreuve";
     $res =  mysqli_query($con, $query);
     while ($row = mysqli_fetch_assoc($res)) {
-        $typeEpreuveItem["idTypeEpreuve"] = $row["idTypeEpreuve"];
-        $typeEpreuveItem["label"] = $row["label"];
-        $typeEpreuve[] = $typeEpreuveItem;
+        $typeEpreuve[] = $row;
     }
     return $typeEpreuve;
 }

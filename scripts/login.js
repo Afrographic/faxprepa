@@ -21,6 +21,7 @@ function loginSchool(loginButton, name, mdp) {
     let req = new XMLHttpRequest();
     req.open("POST", "app/controllers/login.php");
     req.onload = function() {
+        console.log("boobs");
         console.log(this.responseText);
         let res = JSON.parse(this.responseText);
         setTimeout(function() {

@@ -22,6 +22,7 @@
                 <!-- Les filieres seront charges depuis le serveur -->
             </select>
         </div>
+        <div class="button CTAButtonSecondary" onclick="showrouterScreen('ajouterFiliere')">Ajouter une filiere</div> <br><br>
         <div class="formItem">
             <div class="label">Niveau</div>
             <input type="number" placeholder="Entrez le niveau" id="niveau" />

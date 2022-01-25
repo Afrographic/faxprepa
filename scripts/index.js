@@ -38,15 +38,35 @@ function reloadUi() {
     }, 1000);
 }
 
-function showAddTestView() {
-    console.log(idSchoolP);
-    let idSchool = parseInt(idSchoolP);
+function showAddTestViewProxy() {
+    let idSchool = parseInt(userData.idSchool);
     var req = new XMLHttpRequest();
-    req.open('GET', 'app/controllers/getTest.php?idSchool=' + idSchool);
+    req.open('GET', `app/controllers/filiereRoutes.php?idSchool=${idSchool}`);
     req.onload = function() {
-        let tests = JSON.parse(this.responseText);
-        console.log(tests);
-        renderUserTest(tests);
+        let res = JSON.parse(this.responseText);
+        // saving the filieres
+        filieres = res;
+        console.log(filieres);
+        handleResSQTVP(res);
     }
     req.send();
+}
+
+function loadFiliere() {
+    let filiereTemplate = '';
+    filieres.forEach(function(filiereItem) {
+        filiereTemplate += `
+          <option value=${filiereItem.idFiliere}>${filiereItem.label}</option>
+        `
+    });
+    $("#filieres").innerHTML = filiereTemplate;
+}
+
+function handleResSQTVP(res) {
+    if (res.length > 0) {
+        loadFiliere();
+        showrouterScreen("addSubject");
+    } else {
+        showrouterScreen("ajouterFiliere");
+    }
 }

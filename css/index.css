@@ -125,3 +125,9 @@
     clip-path: circle();
     width: 50px;
 }
+
+.headerButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

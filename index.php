@@ -19,6 +19,7 @@
     <title>FaxPrepa</title>
     <script src='lib.js'></script>
     <script src='scripts/index.js'></script>
+  
 
 
 </head>
@@ -44,11 +45,18 @@
                         <img src="images/project/search.png" alt="">
                     </div>
                 </div> -->
-                <div class="button CTAButtonSecondary invisible" onclick="logOut()" id="logOut">Deconnexion</div>
-                <div class="button CTAButton invisible" onclick="showAddTestView()" id="publishSubjectUserLogedIn">Publier une epreuve</div>
-                <div class="button CTAButtonSecondary" onclick="showrouterScreen('login')" id="connectUser">Se connecter</div>
-
-                <div class="button CTAButton" onclick="showrouterScreen('register')" id="registerButtonFromIndex">S'enregistrer</div>
+                <div class="headerButton">
+                    <div class="button CTAButtonSecondary invisible" onclick="logOut()" id="logOut">Deconnexion</div>
+                </div>
+                <div class="headerButton">
+                    <div class="button CTAButton invisible" onclick="showAddTestViewProxy()" id="publishSubjectUserLogedIn">Publier une epreuve</div>
+                </div>
+                <div class="headerButton">
+                    <div class="button CTAButtonSecondary" onclick="showrouterScreen('login')" id="connectUser">Se connecter</div>
+                </div>
+                <div class="headerButton">
+                    <div class="button CTAButton" onclick="showrouterScreen('register')" id="registerButtonFromIndex">S'enregistrer</div>
+                </div>
 
 
                 <div class="logo phone">
@@ -93,7 +101,7 @@
     <script src='scripts/addSubject.js'></script>
     <script src='scripts/ecole.js'></script>
     <script src='scripts/test.js'></script>
-
+    <script src='scripts/addfiliere.js'></script>
     <script src='scripts/gererTest.js'></script>
     <script src='scripts/initUserAccount.js'></script>
 </body>

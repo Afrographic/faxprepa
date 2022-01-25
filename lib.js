@@ -21,7 +21,6 @@ function renderError(HTMlNode, message) {
 function enableButtonLoadingState(button) {
     button.innerHTML = '';
     button.classList.add("loading");
-
 }
 
 function scrollToBottomOfHtmlElement(element) {

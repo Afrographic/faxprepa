@@ -3,28 +3,32 @@ function getEpreuve($idSchool)
 {
     global $con;
     $tests = [];
-    $query = "select * from epreuve where idEcole = $idSchool";
+    $query = "select epreuve.*,school.pseudo from epreuve,school where idEcole = $idSchool and school.idSchool = $idSchool";
     $res =  mysqli_query($con, $query);
     while ($row = mysqli_fetch_assoc($res)) {
-        $testItem["idEpreuve"] = $row["idEpreuve"];
-        $testItem["nom"] = $row["nom"];
-        $testItem["annee"] = $row["annee"];
-        $testItem["taille"] = $row["taille"];
-        $testItem["path"] = $row["path"];
-        $testItem["idEcole"] = $row["idEcole"];
-        $testItem["idTypeEpreuve"] = $row["idTypeEpreuve"];
-        $testItem["totalDownload"] = $row["totalDownload"];
-        $testItem["niveau"] = $row["niveau"];
-        $testItem["filiere"] = $row["filiere"];
-        $tests[] = $testItem;
+        $tests[] = $row;
     }
     return $tests;
 }
 
-function createEpreuve($name, $annee, $taille, $idEcole, $idTypeEpreuve, $path)
+function searchEpreuve($idSchool, $idFiliere, $annee, $niveau)
 {
     global $con;
-    $query = "insert into epreuve(nom,annee,taille,path,idEcole,idTypeEpreuve) values('$name','$annee','$taille','$path','$idEcole','$idTypeEpreuve')";
+    $tests = [];
+    $query = "select * from epreuve where idEcole = $idSchool and idFiliere = $idFiliere and annee like '%$annee%' and niveau like '%$niveau'";
+    $res =  mysqli_query($con, $query);
+    while ($row = mysqli_fetch_assoc($res)) {
+        $tests[] = $row;
+    }
+    return $tests;
+}
+
+
+
+function createEpreuve($name, $annee, $taille, $idEcole, $idTypeEpreuve, $path, $niveau, $idFiliere)
+{
+    global $con;
+    $query = "insert into epreuve(nom,annee,taille,path,idEcole,idTypeEpreuve,niveau,idFiliere) values('$name','$annee','$taille','$path','$idEcole','$idTypeEpreuve','$niveau','$idFiliere')";
     mysqli_query($con, $query);
     return true;
 }

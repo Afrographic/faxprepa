@@ -7,11 +7,13 @@ if (isset($_POST['name']) && isset($_POST['annee']) && isset($_POST['taille']) &
     $taille = $_POST['taille'];
     $idEcole = $_POST['idEcole'];
     $idTypeEpreuve = $_POST['idTypeEpreuve'];
+    $niveau = $_POST['niveau'];
+    $idFiliere = $_POST['idFiliere'];
 
 
     // file db path
     $path = 'data/subjects/' . $file['name'];
-    createEpreuve($name, $annee, $taille, $idEcole, $idTypeEpreuve, $path);
+    createEpreuve($name, $annee, $taille, $idEcole, $idTypeEpreuve, $path, $niveau, $idFiliere);
 
     // upload the file to the server
     $tempFilePath =  $file['tmp_name'];

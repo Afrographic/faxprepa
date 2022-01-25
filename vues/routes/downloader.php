@@ -7,10 +7,43 @@
         <div class="numEpreuve" id="activeSchoolNumTest">14 epreuves</div>
         <div class="manager">
             <img src="images/project/admin.svg" alt="">
-            <div> Gerer par ${schoolItem.pseudo} </div>
+            <div id="managerDownloader"> Gerer par </div>
         </div>
     </div>
 </div>
+<div class="filters">
+    <div class="formItem">
+        <div class="label">Filiere</div>
+        <select name="" id="filter_Filiere">
+            <!-- Will load from the server -->
+        </select>
+    </div>
+    <div class="formItem">
+        <div class="label">Annee</div>
+        <input type="text" placeholder="Entrez l'annee'" id='filter_annee' />
+        <div class="errorField">
+            <img src="images/project/warning.png" alt="">
+            <span>Erreur sur ce champ</span>
+        </div>
+
+    </div>
+
+    <div class="formItem">
+        <div class="label">Niveau</div>
+        <input type="number" placeholder="Entrez le niveau" id='filter_niveau' />
+        <div class="errorField">
+            <img src="images/project/warning.png" alt="">
+            <span>Erreur sur ce champ</span>
+        </div>
+
+    </div>
+    <div>
+        <div class="searchIcon" onclick="sortTests()">
+            <img src="images/project/search.png" alt="">
+        </div>
+    </div>
+</div>
+
 <div class="tabs" id='typeTestTabs'>
     <div class="tabItem tab-active" onclick="setActive(this)">
         CC

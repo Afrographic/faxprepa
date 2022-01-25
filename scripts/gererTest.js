@@ -4,8 +4,9 @@ function loadTestsAPI(idSchoolP) {
     var req = new XMLHttpRequest();
     req.open('GET', 'app/controllers/getTest.php?idSchool=' + idSchool);
     req.onload = function() {
+
         let tests = JSON.parse(this.responseText);
-        console.log(tests);
+
         renderUserTest(tests);
     }
     req.send();

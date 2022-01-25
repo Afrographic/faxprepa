@@ -8,12 +8,7 @@ function getSchool($offset)
     $res =  mysqli_query($con, $query);
 
     while ($row = mysqli_fetch_assoc($res)) {
-        $schoolItem["idSchool"] = $row["idSchool"];
-        $schoolItem["name"] = $row["name"];
-        $schoolItem["logo"] = $row["logo"];
-        $schoolItem["totalEpreuve"] = $row["totalEpreuve"];
-        $schoolItem["pseudo"] = $row["pseudo"];
-        $schools[] = $schoolItem;
+        $schools[] = $row;
     }
     return $schools;
 }
@@ -26,12 +21,7 @@ function searchSchool($token)
     $res =  mysqli_query($con, $query);
 
     while ($row = mysqli_fetch_assoc($res)) {
-        $schoolItem["idSchool"] = $row["idSchool"];
-        $schoolItem["name"] = $row["name"];
-        $schoolItem["logo"] = $row["logo"];
-        $schoolItem["totalEpreuve"] = $row["totalEpreuve"];
-        $schoolItem["pseudo"] = $row["pseudo"];
-        $schools[] = $schoolItem;
+        $schools[] = $row;
     }
     return $schools;
 }
@@ -70,10 +60,7 @@ function login($name, $mdp)
 
     if (mysqli_num_rows($res) > 0) {
         while ($row = mysqli_fetch_assoc($res)) {
-            $schoolItem["idSchool"] = $row["idSchool"];
-            $schoolItem["name"] = $row["name"];
-            $schoolItem["logo"] = $row["logo"];
-            $schoolItem["pseudo"] = $row["pseudo"];
+            $schoolItem = $row;
         }
         return $schoolItem;
     } else {

@@ -17,7 +17,7 @@ function renderSchools(schools, offset) {
     let schoolTemplate = '';
     schools.forEach(function(schoolItem) {
         schoolTemplate += `
-        <div class="schoolItem" onclick="showrouterScreen('downloader');loadActiveSchoolHeader('${schoolItem.idSchool}','${schoolItem.logo}','${schoolItem.name}','${schoolItem.totalEpreuve}'); loadTests(${schoolItem.idSchool})" id='${schoolItem.idSchool}'>
+        <div class="schoolItem" onclick="showrouterScreen('downloader');loadActiveSchoolHeader('${schoolItem.idSchool}','${schoolItem.logo}','${schoolItem.name}','${schoolItem.totalEpreuve}','${schoolItem.pseudo}'); loadTests(${schoolItem.idSchool})" id='${schoolItem.idSchool}'>
             <div class="logo">
                 <img src="${schoolItem.logo}" alt="" />
                 <div class="nom">${schoolItem.name}</div>
@@ -54,7 +54,7 @@ function search() {
 
     let searchToken = $("#searchToken").value;
     if (searchToken.length > 0) {
-        $(".searchIcon img").src = "images/project/close.png";
+        $("#searchSchool img").src = "images/project/close.png";
         // API Call
         console.log(searchToken);
         var req = new XMLHttpRequest();
@@ -75,7 +75,7 @@ function search() {
 }
 
 function closeSearch() {
-    $(".searchIcon img").src = "images/project/search.png";
+    $("#searchSchool img").src = "images/project/search.png";
     $("#searchToken").value = '';
     loadSchool(0);
 }
