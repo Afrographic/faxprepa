@@ -41,9 +41,9 @@ function renderUserTest(tests) {
                         </span>
                     </div>
                     <div class="flex1 datePosted">
-                        Publier par <br>
+                        Niveau <br>
                         <span class="dateMetaData">
-                            Afrographix
+                        ${testItem.niveau}
                         </span>
                     </div>
                    
@@ -74,7 +74,7 @@ function renderUserTest(tests) {
 
 function deleteTest(htmlElement, idTest) {
     console.log(htmlElement);
-    if (confirm("Voulez vous vraiment supprimer ce test?")) {
+    if (confirm("Voulez vous vraiment supprimer cette epreuve?")) {
         console.log("Will delete this thing!");
         htmlElement.parentNode.parentNode.removeChild(htmlElement.parentNode);
         if (!$("#gererTestContainerDFFF").innerHTML.includes("testItem")) {

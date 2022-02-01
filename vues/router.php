@@ -25,6 +25,9 @@
     <div class="routeItem" id="ajouterFiliere">
         <?php require("routes/addFiliere.php") ?>
     </div>
+    <div class="routeItem" id="registerStudent">
+        <?php require("routes/registerStudent.php") ?>
+    </div>
     <div class="footerrouter">
         2022 Afographix Studio
     </div>

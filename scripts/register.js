@@ -19,7 +19,7 @@ function registerProxy(registerButton) {
         fieldOK = false;
     }
     if (pseudo.trim().length == 0) {
-        console.log("Fuck");
+
         renderError($('#pseudoRegister').parentNode, "Veuillez renseigner votre pseudo");
         fieldOK = false;
     } else {

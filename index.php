@@ -19,6 +19,7 @@
     <title>FaxPrepa</title>
     <script src='lib.js'></script>
     <script src='scripts/index.js'></script>
+    <script src="scripts/registerStudent.js"></script>
   
 
 
@@ -75,9 +76,10 @@
             <div class="section">
                 <img src="images/project/learning_illustration.svg" alt="">
                 <h3>Retrouvez les anciens sujets de votre ecole pour booster vos preparations</h3>
+                <div class="button CTAButtonSecondary" onclick="showrouterScreen('registerStudent')">Creer un compte etudiant</div>
                 <div class="affiliate" id='affiliate'>
-                    <p>Nous rejoindre , creer un compte <br> et commencer a publier des epreuves</p>
-                    <div class="button CTAButtonSecondary" onclick="showrouterScreen('register')">Creer un compte</div>
+                    <p>Nous rejoindre? contribuer a la reussite de vos cadets , creer un compte  et commencer a publier des epreuves</p>
+                    <div class="button CTAButtonSecondary" onclick="showrouterScreen('register')">Creer un compte contributeur</div>
                 </div>
                 <div class="affiliate invisible" id='admin'>
                     <p>Cliquez sur le bouton ci-dessous pour gerer vos epreuves</p>
